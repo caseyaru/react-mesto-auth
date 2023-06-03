@@ -1,0 +1,15 @@
+.profile__title {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: baseline;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 680px) {
+    .profile__title {
+        gap: 10px;
+        padding-right: 0;
+        padding-left: 26px;
+    }
+}

@@ -1,0 +1,8 @@
+.elements__string {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 22px 15px 28px 21px;
+    max-width: 246px;
+    
+}
