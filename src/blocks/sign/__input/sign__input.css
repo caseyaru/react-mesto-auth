@@ -1,0 +1,24 @@
+.sign__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    margin: 0;
+    outline: none;
+    padding: 0 0 9px;
+    width: 100%;
+    margin-top: 0;
+}
+
+.sign__input:first-child{
+    margin-top: 40px;
+}
+
+.sign__input::placeholder{
+    color: #CCCCCC;
+}

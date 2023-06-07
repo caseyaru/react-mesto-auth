@@ -47,7 +47,7 @@ function AddPlacePopup(props){
                 placeholder="Название"
                 maxLength="30"
                 minLength="2"
-                required="true"
+                required
                 value={values.name}
                 onChange={handleChange}
               />
@@ -58,7 +58,7 @@ function AddPlacePopup(props){
                 id="link"
                 className="popup__field popup__field_type_mesto-link"
                 placeholder="Ссылка на картинку"
-                required="true"
+                required
                 value={values.link}
                 onChange={handleChange}
               />

@@ -46,7 +46,7 @@ function EditAvatarPopup(props) {
               id="avatar"
               className="popup__field popup__field_type_avatar"
               placeholder="Ссылка на изображение"
-              required="true"
+              required
             />
             <span id="name-error" className={`popup__error ${isValid ? '' : 'popup__error_visible'}`}>{errors.avatar}</span>
         </PopupWithForm>
