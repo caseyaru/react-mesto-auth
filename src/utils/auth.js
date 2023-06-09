@@ -12,10 +12,6 @@ export const register = (email, password) => {
         password: password,
       }),
     })
-    .then((response) => {
-      //console.log('сервер', response)
-      return response.json();
-    })
     .then((res) => {
       return res;
     })

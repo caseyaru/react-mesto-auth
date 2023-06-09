@@ -25,6 +25,8 @@ function App() {
 
   const navigate = useNavigate();
 
+  const [loggedIn, setLoggedIn] = useState(false);
+
   const [isAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPopupOpen, setIsAddPlacePopupOpen] = useState(false);
@@ -45,8 +47,8 @@ function App() {
   // стейт для отображения почты в мейн
   const [email, setEmail] = useState('');
 
-  //эффект при монтировании
   useEffect(() => {
+    if (loggedIn) {
     api
       .getUserInfo()
       .then((res) => {
@@ -63,7 +65,8 @@ function App() {
       .catch((err) => {
         console.log(err);
     });
-  }, []);
+    }
+  }, [loggedIn]);
 
   const isOpen =
     isEditProfilePopupOpen ||
@@ -75,21 +78,20 @@ function App() {
     isPopupFailOpen;
 
   const handleEditAvatarClick = () => {
-    setIsEditAvatarPopupOpen(!isAvatarPopupOpen);
+    setIsEditAvatarPopupOpen(true);
   }
 
   const handleEditProfileClick = () => {
-    setIsEditProfilePopupOpen(!isEditProfilePopupOpen);
+    setIsEditProfilePopupOpen(true);
   }
 
   const handleAddPlaceClick = () => {
-    setIsAddPlacePopupOpen(!isAddPopupOpen);
+    setIsAddPlacePopupOpen(true);
   }
 
   const handleDeletePlaceClick = (selectedCardId) => {
-    setIsDeletePopupOpen(!isDeletePopupOpen);
+    setIsDeletePopupOpen(true);
     setSelectedCardId(selectedCardId)
-    console.log('s', selectedCardId)
   }
 
   const closeAllPopups = () => {
@@ -186,16 +188,16 @@ function App() {
     .finally(() => setIsLoading(false))
   }
 
-  //======== PROJECT12
-
-  const [loggedIn, setLoggedIn] = useState(false);
-
   //регистрация
   const handleRegister = (email, password) => {
     auth.register(email, password)
     .then((res) => {
-      navigate('/sign-in');
-      setIsPopupSuccessOpen(true);
+      if (res.ok) {
+        navigate('/sign-in');
+        setIsPopupSuccessOpen(true);
+        return res.json()
+      }
+      return Promise.reject(`${res.status}`)
     })
     .catch(err => {
       console.log('ошибка при регистрации', err)
@@ -236,7 +238,6 @@ function App() {
   const handleSignOut = () => {
     localStorage.removeItem('jwt');
     setLoggedIn(false);
-    navigate('/sign-up');
   }
 
   return (
@@ -322,3 +323,5 @@ function App() {
 }
 
 export default App;
+
+//планы на будущее: адаптив, общий компонент для формы
