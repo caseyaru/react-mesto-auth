@@ -9,7 +9,7 @@ function Header(props){
         <header className="header">
             <img src={logo} className="header__logo" alt="Логотип «Место»" />
             {props.loggedIn ? 
-            (<><p className="header__text">{props.email}</p> <Link to='/sign-in' onClick={props.onSignOut} className="header__btn">Выйти</Link></>)
+            (<div className="header__links-block"><p className="header__text">{props.email}</p> <Link to='/sign-in' onClick={props.onSignOut} className="header__btn header__btn_type_logout">Выйти</Link></div>)
             : (location.pathname === '/sign-up' ? (<Link to='/sign-in' className="header__btn">Войти</Link>)
             : (<Link to='/sign-up' className="header__btn">Регистрация</Link>)
             )}

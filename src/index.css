@@ -3,11 +3,12 @@
 @import url(./blocks/page/page.css);
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__links-block/header__links-block.css);
 @import url(./blocks/header/__btn/header__btn.css);
 @import url(./blocks/header/__text/header__text.css);
 @import url(./blocks/sign/sign.css);
 @import url(./blocks/sign/__btn-submit/sign__btn-submit.css);
-/* @import url(./blocks/sign/__form/sign__form.css); */
+@import url(./blocks/sign/__form/sign__form.css);
 @import url(./blocks/sign/__input/sign__input.css);
 @import url(./blocks/sign/__link/sign__link.css);
 @import url(./blocks/sign/__text/sign__text.css);

@@ -23,3 +23,10 @@
     background-color: transparent;
     color: white;
 }
+
+@media screen and (max-width: 425px) {
+    .sign__btn-submit{
+        width: 260px;
+        height: 46px;
+    }
+}

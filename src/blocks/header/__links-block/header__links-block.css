@@ -1,0 +1,13 @@
+.header__links-block {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 425px) {
+    .header__links-block {
+        flex-direction: column;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(84,84,84,.7);
+        width: 100%;
+    }
+}

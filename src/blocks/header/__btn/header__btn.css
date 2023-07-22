@@ -10,3 +10,13 @@
     padding: 0;
     text-decoration: none;
 }
+
+@media screen and (max-width: 425px) {
+    .header__btn {
+        font-size: 14px;
+    }
+    .header__btn_type_logout {
+        margin: 18px 0 0;
+        text-align: center;
+    }
+}
